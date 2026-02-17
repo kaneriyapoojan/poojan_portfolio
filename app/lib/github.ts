@@ -17,7 +17,6 @@ type GitHubRepo = {
 
 async function ghFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${GITHUB_API}${path}`, {
-    next: { revalidate: 3600 },
     headers: process.env.GITHUB_TOKEN
       ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
       : undefined
@@ -44,7 +43,6 @@ export async function getGitHubStats(username: string): Promise<GitHubStats> {
     const languageMaps = await Promise.all(
       ownRepos.slice(0, 12).map(async (repo) => {
         const res = await fetch(repo.languages_url, {
-          next: { revalidate: 3600 },
           headers: process.env.GITHUB_TOKEN
             ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
             : undefined

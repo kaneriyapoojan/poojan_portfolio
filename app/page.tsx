@@ -8,8 +8,6 @@ export default async function HomePage() {
   return <PortfolioPage stats={stats} />;
 }
 
-export const revalidate = 3600;
-
 export async function generateMetadata() {
   return {
     title: `${profile.name} | ${profile.title}`,
