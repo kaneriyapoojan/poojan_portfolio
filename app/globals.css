@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --muted: 214 32% 91%;
+  --muted-foreground: 215 16% 40%;
+  --border: 216 30% 86%;
+  --primary: 222 89% 44%;
+  --primary-foreground: 210 40% 98%;
+  --accent: 24 95% 54%;
+  --accent-foreground: 222 47% 11%;
+}
+
+.dark {
+  --background: 222 47% 8%;
+  --foreground: 210 40% 96%;
+  --card: 222 44% 12%;
+  --card-foreground: 210 40% 96%;
+  --muted: 223 27% 18%;
+  --muted-foreground: 216 15% 70%;
+  --border: 223 24% 25%;
+  --primary: 207 90% 61%;
+  --primary-foreground: 223 47% 8%;
+  --accent: 31 95% 58%;
+  --accent-foreground: 223 47% 8%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: "Space Grotesk", "Avenir Next", "Manrope", "Segoe UI", sans-serif;
+  background-image:
+    radial-gradient(circle at 10% 5%, rgba(14, 116, 144, 0.12), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(249, 115, 22, 0.1), transparent 35%);
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: "Instrument Serif", "Iowan Old Style", "Georgia", serif;
+}
+
+::selection {
+  @apply bg-primary/20 text-foreground;
+}
+
+.glass {
+  @apply border border-border/80 bg-card/80 backdrop-blur-xl;
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
