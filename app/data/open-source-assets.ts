@@ -15,11 +15,11 @@ export const openSourceAssets = {
       creditUrl: "https://unsplash.com/photos/Q1p7bh3SHj8"
     },
     {
-      src: "https://images.unsplash.com/photo-1677442135968-6d89400b4f46?auto=format&fit=crop&w=1400&q=80",
+      src: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1400&q=80",
       alt: "Abstract AI network lighting",
       source: "Unsplash",
-      creditName: "Growtika",
-      creditUrl: "https://unsplash.com/photos/Am6pBe2FpJw"
+      creditName: "Google DeepMind",
+      creditUrl: "https://unsplash.com/photos/bcc4688e7485"
     }
   ],
   categoryCovers: {

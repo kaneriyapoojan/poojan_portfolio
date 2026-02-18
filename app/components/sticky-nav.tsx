@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Command, Home } from "lucide-react";
+import { Home } from "lucide-react";
 
 import { useActiveSection } from "@/app/hooks/use-active-section";
 import { cn } from "@/app/lib/utils";
-import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/app/components/theme-toggle";
 
 type NavItem = {
@@ -14,21 +13,22 @@ type NavItem = {
 };
 
 export function StickyNav({
-  items,
-  onOpenCommand
+  items
 }: {
   items: NavItem[];
-  onOpenCommand: () => void;
 }) {
   const active = useActiveSection(items.map((item) => item.id));
 
   return (
     <header className="fixed inset-x-0 top-4 z-40">
       <div className="section-container">
-        <div className="glass flex items-center justify-between rounded-full px-4 py-3">
-          <Link href="#top" className="inline-flex items-center gap-2 font-semibold">
-            <Home className="h-4 w-4 text-primary" />
-            Poojan
+        <div className="glass flex items-center justify-between rounded-full px-4 py-3 shadow-glow">
+          <Link href="#top" className="inline-flex items-center gap-2.5 font-semibold">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
+              PK
+            </span>
+            <span className="hidden sm:inline">Poojan</span>
+            <Home className="h-4 w-4 text-primary sm:hidden" />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -49,11 +49,6 @@ export function StickyNav({
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={onOpenCommand} className="gap-1">
-              <Command className="h-4 w-4" />
-              <span className="hidden sm:inline">Command</span>
-              <span className="ml-1 rounded border border-border px-1.5 text-xs">K</span>
-            </Button>
             <ThemeToggle />
           </div>
         </div>

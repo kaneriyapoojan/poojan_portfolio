@@ -5,11 +5,11 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://poojankaneriya.in"),
-  title: "Poojan Kaneriya | Software Engineer",
+  title: "Poojan Kaneriya",
   description:
     "Portfolio of Poojan Kaneriya - Software Engineer focused on Android, React Native, full-stack systems, and applied AI/ML.",
   openGraph: {
-    title: "Poojan Kaneriya | Software Engineer",
+    title: "Poojan Kaneriya",
     description:
       "Android + React Native + AWS engineer exploring practical AI/ML systems.",
     url: "https://poojankaneriya.in",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Poojan Kaneriya | Software Engineer",
+    title: "Poojan Kaneriya",
     description:
       "Android + React Native + AWS engineer exploring practical AI/ML systems."
   }

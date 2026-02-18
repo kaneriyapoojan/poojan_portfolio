@@ -1,10 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
-
-import { profile } from "@/app/data/profile";
 import type { GitHubStats } from "@/app/lib/github";
-import { CommandMenu } from "@/app/components/command-menu";
 import { ParallaxBackdrop } from "@/app/components/parallax-backdrop";
 import { StickyNav } from "@/app/components/sticky-nav";
 import { AboutSection } from "@/app/sections/about";
@@ -28,22 +24,11 @@ const navItems = [
 ];
 
 export function PortfolioPage({ stats }: { stats: GitHubStats }) {
-  const [openCommand, setOpenCommand] = useState(false);
-
-  const projectCommands = useMemo(
-    () =>
-      profile.projects.map((project) => ({
-        label: project.name,
-        href: `project-${project.id}`
-      })),
-    []
-  );
-
   return (
     <>
       <ParallaxBackdrop />
       <div className="noise" />
-      <StickyNav items={navItems} onOpenCommand={() => setOpenCommand(true)} />
+      <StickyNav items={navItems} />
       <main id="top" className="relative z-10">
         <HeroSection />
         <AboutSection />
@@ -56,13 +41,6 @@ export function PortfolioPage({ stats }: { stats: GitHubStats }) {
         <ContactSection />
         <ResourcesSection />
       </main>
-
-      <CommandMenu
-        sections={navItems.map((item) => ({ label: item.label, href: item.id }))}
-        projects={projectCommands}
-        open={openCommand}
-        setOpen={setOpenCommand}
-      />
     </>
   );
 }

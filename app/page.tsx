@@ -10,7 +10,7 @@ export default async function HomePage() {
 
 export async function generateMetadata() {
   return {
-    title: `${profile.name} | ${profile.title}`,
+    title: profile.name,
     description: profile.oneLiner,
     alternates: {
       canonical: profile.links.website
