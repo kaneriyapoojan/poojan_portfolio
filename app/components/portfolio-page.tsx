@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { profile } from "@/app/data/profile";
 import type { GitHubStats } from "@/app/lib/github";
 import { CommandMenu } from "@/app/components/command-menu";
+import { ParallaxBackdrop } from "@/app/components/parallax-backdrop";
 import { StickyNav } from "@/app/components/sticky-nav";
 import { AboutSection } from "@/app/sections/about";
 import { ContactSection } from "@/app/sections/contact";
@@ -13,6 +14,7 @@ import { ExperienceSection } from "@/app/sections/experience";
 import { GithubProofSection } from "@/app/sections/github-proof";
 import { HeroSection } from "@/app/sections/hero";
 import { ProjectsSection } from "@/app/sections/projects";
+import { ResourcesSection } from "@/app/sections/resources";
 import { SkillsSection } from "@/app/sections/skills";
 import { SpotlightSection } from "@/app/sections/spotlight";
 
@@ -39,6 +41,7 @@ export function PortfolioPage({ stats }: { stats: GitHubStats }) {
 
   return (
     <>
+      <ParallaxBackdrop />
       <div className="noise" />
       <StickyNav items={navItems} onOpenCommand={() => setOpenCommand(true)} />
       <main id="top" className="relative z-10">
@@ -51,6 +54,7 @@ export function PortfolioPage({ stats }: { stats: GitHubStats }) {
         <GithubProofSection stats={stats} />
         <EducationSection />
         <ContactSection />
+        <ResourcesSection />
       </main>
 
       <CommandMenu
